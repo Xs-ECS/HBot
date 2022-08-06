@@ -57,15 +57,15 @@ class Master(threading.Thread):
 
     # Custom function
     def set_title(self, title: str):
-        self.send(f'\033]0;HBot | {title}\007')
+        self.send(f'\033]0;Xress | {title}\007')
 
     def clear_screen(self):
         self.bulk_send([
             '\033[2J\033[1H',
             '',
-            f'    {self.color.fade("╦.╦╔╗.╔═╗╔╦╗")}'.replace('.', f'{self.color.white}.'),
-            f'    {self.color.fade("╠═╣╠╩╗║.║.║.")}'.replace('.', f'{self.color.white}.'),
-            f'    {self.color.fade("╩.╩╚═╝╚═╝.╩.")}{self.color.reset}'.replace('.', f'{self.color.white}.'),
+            f'    {self.color.fade("═╗ ╦╦═╗╔═╗╔═╗╔═╗╔═╗")}'.replace('.', f'{self.color.white}.'),
+            f'    {self.color.fade("╔╩╦╝╠╦╝║╣ ║╣ ╚═╗╚═╗ ")}'.replace('.', f'{self.color.white}.'),
+            f'    {self.color.fade("╩ ╚═╩╚═╚═╝╚═╝╚═╝╚═╝")}{self.color.reset}'.replace('.', f'{self.color.white}.'),
             '\r'
         ])
 
@@ -449,7 +449,8 @@ class Handler(threading.Thread):
         threading.Thread(target= self.zombie_thread, args= (zp, zl,)).start()
 
 if __name__ == '__main__':
-    Database = database.Database('mongodb+srv://....')
+    #Database = database.Database('mongodb+srv://<username>:<password>@cluster0.fqly7uv.mongodb.net/?retryWrites=true&w=majority')
+    #Database = database.Database('mongodb+srv://....')
     Console = console.Console()
     Color = console.Color()
 
